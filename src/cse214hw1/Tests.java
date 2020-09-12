@@ -20,5 +20,16 @@ public class Tests {
 
         System.out.println("Merge test");
         System.out.println(Arrays.toString(ArrayUtils.merge(a, b)));
+
+        System.out.println("Deque test");
+        Deque<String> deque = new ArrayDeque<>(5);
+        System.out.println(deque);
+        deque.addFirst("1");
+        deque.addFirst("2");
+        deque.addFirst("3");
+        deque.addFirst("4");
+        deque.addFirst("5");
+        deque.addFirst("6");
+        System.out.println(deque);
     }
 }
