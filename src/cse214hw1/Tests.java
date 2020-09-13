@@ -1,7 +1,6 @@
 package cse214hw1;
 
-import javax.sound.midi.Soundbank;
-import java.util.*;
+import java.util.Arrays;
 
 public class Tests {
     public static void main(String[] args) {
@@ -55,5 +54,9 @@ public class Tests {
         ArrayDeque<Double> test = ArrayDeque.of(2.0, 4.0, 5.25);
         test.addFirst(7.0);
         System.out.println(test);
+
+        System.out.println("Queue test");
+        Queue<Character> q = new ArrayQueue<>();
+        System.out.println(q);
     }
 }
