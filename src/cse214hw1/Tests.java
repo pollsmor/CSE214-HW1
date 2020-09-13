@@ -1,5 +1,6 @@
 package cse214hw1;
 
+import javax.sound.midi.Soundbank;
 import java.util.*;
 
 public class Tests {
@@ -50,5 +51,9 @@ public class Tests {
         System.out.println(deque2);
         deque2.removeLast();
         System.out.println(deque2);
+
+        ArrayDeque<Double> test = ArrayDeque.of(2.0, 4.0, 5.25);
+        test.addFirst(7.0);
+        System.out.println(test);
     }
 }

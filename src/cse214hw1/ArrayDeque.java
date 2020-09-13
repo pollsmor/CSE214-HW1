@@ -122,4 +122,14 @@ public class ArrayDeque<T> implements Deque<T> {
 
         return temp;
     }
+
+    public static <T> ArrayDeque<T> of (T... args) {
+        ArrayDeque<T> output = new ArrayDeque<>();
+
+        for (T el : args) {
+            output.addLast(el);
+        }
+
+        return output;
+    }
 }
