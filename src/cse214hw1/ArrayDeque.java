@@ -103,10 +103,16 @@ public class ArrayDeque<T> implements Deque<T> {
         if (size == 0)
             throw new NoSuchElementException("Empty list.");
 
+        size--;
         T temp = a[start]; // need to return this as per definition
         a[start] = null;
         start++;
         if (start == a.length) start = 0; // don't go out of bounds
+
+        if (size == 0) { // just in case all elements get removed
+            start = 0;
+            end = 0;
+        }
 
         return temp;
     }
@@ -116,10 +122,17 @@ public class ArrayDeque<T> implements Deque<T> {
         if (size == 0)
             throw new NoSuchElementException("Empty list.");
 
+        --size;
+
         T temp = a[end]; // need to return this as per definition
         a[end] = null;
         end--;
         if (end == -1) end = a.length -1; // don't go out of bounds
+
+        if (size == 0) { // just in case all elements get removed
+            start = 0;
+            end = 0;
+        }
 
         return temp;
     }

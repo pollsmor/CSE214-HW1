@@ -31,6 +31,17 @@ public class Tests {
         deque.addFirst("5");
         deque.addFirst("6");
         System.out.println(deque);
+        deque.removeFirst();
+        deque.removeFirst();
+        deque.removeFirst();
+        deque.removeLast();
+        deque.removeLast();
+        deque.removeLast();
+        System.out.println(deque);
+        deque.addFirst("1");
+        deque.addLast("2");
+        System.out.println(deque);
+
 
         Deque<String> deque2 = new ArrayDeque<>(5);
         System.out.println(deque2);
