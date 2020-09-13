@@ -45,5 +45,10 @@ public class Tests {
         deque2.addFirst("b");
         deque2.addFirst("c");
         System.out.println(deque2);
+
+        deque2.removeFirst();
+        System.out.println(deque2);
+        deque2.removeLast();
+        System.out.println(deque2);
     }
 }

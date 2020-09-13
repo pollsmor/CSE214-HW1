@@ -99,11 +99,27 @@ public class ArrayDeque<T> implements Deque<T> {
 
     @Override
     public T removeFirst() {
-        return a[0];
+        if (size == 0)
+            throw new NoSuchElementException("Empty list.");
+
+        T temp = a[start]; // need to return this as per definition
+        a[start] = null;
+        start++;
+        if (start == a.length) start = 0; // don't go out of bounds
+
+        return temp;
     }
 
     @Override
     public T removeLast() {
-        return a[0];
+        if (size == 0)
+            throw new NoSuchElementException("Empty list.");
+
+        T temp = a[end]; // need to return this as per definition
+        a[end] = null;
+        end--;
+        if (end == -1) end = a.length -1; // don't go out of bounds
+
+        return temp;
     }
 }
