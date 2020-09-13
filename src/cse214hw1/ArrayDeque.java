@@ -51,6 +51,7 @@ public class ArrayDeque<T> implements Deque<T> {
             outputIdx++;
         }
 
+        start = 0;
         end = outputIdx - 1; // -1 because for loop adds an extra one
         a = output;
     }
@@ -80,7 +81,20 @@ public class ArrayDeque<T> implements Deque<T> {
 
     @Override
     public void addLast(T t) {
+        size++;
 
+        if (a[0] == null) a[0] = t; // empty array
+
+        else if (end + 1 == start || end + 1 == a.length) { // list is full, resize
+            resize();
+            a[end + 1] = t;
+            end++;
+        }
+
+        else { // default case: just add to back
+            a[end + 1] = t;
+            end++;
+        }
     }
 
     @Override
