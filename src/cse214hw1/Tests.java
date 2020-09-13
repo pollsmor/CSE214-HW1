@@ -69,5 +69,33 @@ public class Tests {
         System.out.println("Queue test");
         Queue<Character> q = new ArrayQueue<>();
         System.out.println(q);
+        q.add('a');
+        q.add('b');
+        q.add('c');
+        q.add('d');
+        q.add('e');
+        System.out.println(q.peek());
+        System.out.println(q);
+        q.remove();
+        q.remove();
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        q.add('q');
+        System.out.println(q.peek());
+        System.out.println(q);
     }
 }
