@@ -9,10 +9,10 @@ public class Tests {
         ArrayUtils.rotate(a, 1);
 
         int[] b = {1, 2, 3, 4, 5};
-        ArrayUtils.rotate(b, 2);
+        ArrayUtils.rotate(b, 3);
 
         char[] c = {'a', 'b', 'c', 'd', 'e'};
-        ArrayUtils.rotate(c, 2);
+        ArrayUtils.rotate(c, 3);
 
         System.out.println(Arrays.toString(a));
         System.out.println(Arrays.toString(b));
