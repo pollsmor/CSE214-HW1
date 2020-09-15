@@ -42,7 +42,6 @@ public class Tests {
         deque.addLast("2");
         System.out.println(deque);
 
-
         Deque<String> deque2 = new ArrayDeque<>(5);
         System.out.println(deque2);
         deque2.addLast("1");
@@ -60,6 +59,12 @@ public class Tests {
         deque2.removeFirst();
         System.out.println(deque2);
         deque2.removeLast();
+        System.out.println(deque2);
+        deque2.addFirst("c");
+        System.out.println(deque2);
+        deque2.addLast("7");
+        System.out.println(deque2);
+        deque2.addLast("@");
         System.out.println(deque2);
 
         ArrayDeque<Double> test = ArrayDeque.of(2.0, 4.0, 5.25);
@@ -95,6 +100,9 @@ public class Tests {
         q.add('q');
         q.add('q');
         q.add('q');
+        q.add('q');
+        q.add('q');
+
         System.out.println(q.peek());
         System.out.println(q);
     }

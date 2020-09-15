@@ -84,17 +84,17 @@ public class ArrayDeque<T> implements Deque<T> {
     public void addLast(T t) {
         size++;
 
-        if (a[0] == null) a[0] = t; // empty array
+        if (a[0] == null && start == 0) a[0] = t; // empty array
 
-        else if (end + 1 == start || end + 1 == a.length) { // list is full, resize
+        else if ((end + 1) % a.length == start) { // list is full, resize
             resize();
             a[end + 1] = t;
             end++;
         }
 
         else { // default case: just add to back
-            a[end + 1] = t;
-            end++;
+            a[(end + 1) % a.length] = t;
+            end = (end + 1) % a.length;
         }
     }
 

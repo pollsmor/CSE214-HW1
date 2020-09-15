@@ -55,17 +55,17 @@ public class ArrayQueue<T> implements Queue<T> {
     public void add(T t) { // copypasted from Deque's addLast
         size++;
 
-        if (a[0] == null) a[0] = t; // empty array
+        if (a[0] == null && start == 0) a[0] = t; // empty array
 
-        else if (end + 1 == start || end + 1 == a.length) { // list is full, resize
+        else if ((end + 1) % a.length == start) { // list is full, resize
             resize();
-            a[end] = t; // I honestly have no clue why the index is end + 1 for this same segment of code in ArrayDeque.addLast
+            a[end + 1] = t;
             end++;
         }
 
         else { // default case: just add to back
-            a[end + 1] = t;
-            end++;
+            a[(end + 1) % a.length] = t;
+            end = (end + 1) % a.length;
         }
     }
 
