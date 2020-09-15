@@ -6,18 +6,20 @@ public class ArrayUtils {
      * moves to a[(i+r) mod a.length].
      * @param a: the input array of <code>int</code>s
      */
+    @SuppressWarnings("ManualArrayCopy")
     public static void rotate(int[] a, int r) {
         if (a.length <= 1 || (r % a.length) <= 0) return; // edge cases - no reason to run function
 
         r %= a.length; // in case r is higher than length of array
 
-        for (int i = 0; i < r; i++) { // rotate 1 spot r times
-            int temp = a[a.length - 1]; // store last element that will be overwritten
-            for (int j = 1; j < a.length; j++) {
-                a[a.length - j] = a[a.length - j - 1];
-            }
+        int[] output = new int[a.length];
 
-            a[0] = temp; // move stored element to the front
+        for (int i = 0; i < a.length; i++) {
+            output[(i + r) % a.length] = a[i];
+        }
+
+        for (int i = 0; i < a.length; i++) {
+            a[i] = output[i];
         }
     }
 
